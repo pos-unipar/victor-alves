@@ -1,5 +1,10 @@
+const refreshTableSize = () => {
+    $("#num-row").text($("#table-noticias tbody tr").length)
+}
+
 
 $(document).ready(() => {
+    $("#table-noticias").tableDnD();
     refreshTableSize();
 })
 
@@ -41,9 +46,7 @@ function addDataTable(noticiajson){
     tbody.append(tr);
 }
 
-function refreshTableSize() {
-    $("#num-row").text($("#table-noticias tbody tr").length)
-}
+
 
 function remove(element) {
     $(element).parents('tr').remove();
